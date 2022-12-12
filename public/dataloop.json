@@ -1,0 +1,43 @@
+{
+  "components": {
+    "panels": [
+      {
+        "name": "preview-modality",
+        "minRole": "annotator",
+        "supportedSlots": [
+          {
+            "type": "floatingWindow",
+            "configuration": {
+              "layout": {
+                "width": 455,
+                "height": 340,
+                "resizeable": true,
+                "backgroundColor": "dl-color-studio-panel"
+              }
+            }
+          }
+        ],
+        "conditions": {
+          "resources": [
+            {
+              "entityType": "item",
+              "filter": {
+                "$and": [
+                  {
+                    "metadata": {
+                      "system": {
+                        "modalities": {
+                          "$exists": true
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
